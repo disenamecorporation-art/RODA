@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', sans-serif;
+  --color-brand-orange: #fd5100;
+  --color-brand-blue: #01178a;
+}
+
+/* Custom Utilities & Keyframes */
+@layer utilities {
+  .glass-light {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(1, 23, 138, 0.05);
+  }
+
+  .glass-dark {
+    background: rgba(1, 23, 138, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px 0 rgba(1, 23, 138, 0.04);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-dark {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-input {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .glass-input:focus {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: #fd5100;
+    box-shadow: 0 0 15px rgba(255, 81, 0, 0.2);
+  }
+
+  /* Shine effect container and pseudo-class helpers */
+  .shine-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+    transform: skewX(-20deg);
+    transition: none;
+  }
+
+  .shine-btn:hover::before {
+    left: 150%;
+    transition: all 0.8s ease-in-out;
+  }
+
+  /* Continuous floating effect */
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  /* Bounce animation for indicators */
+  .animate-bounce-slow {
+    animation: bounce 2.5s infinite;
+  }
+
+  /* Custom line drawer animation support */
+  .timeline-progress {
+    transition: height 0.5s ease-out;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateY(-15px);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateY(0px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-10px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Base resets & typography modifications */
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar to keep it feeling premium */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f3f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "RODA",
+  "description": "Landing page premium para RODA: la plataforma de control de mantenimiento vehicular y automatización para talleres y conductores en Venezuela.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
