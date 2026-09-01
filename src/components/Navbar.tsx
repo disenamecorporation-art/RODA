@@ -113,7 +113,7 @@ export default function Navbar({ onContactWorkshopClick }: NavbarProps) {
 
       {/* Mobile Dropdown Menu with Glassmorphism */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass-light border-b border-brand-blue/10 px-6 py-8 flex flex-col gap-6 animate-fade-in shadow-2xl">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/85 backdrop-blur-xl border-b border-white/35 px-6 py-8 flex flex-col gap-6 animate-fade-in shadow-2xl">
           {navLinks.map((link) => (
             <a
               key={link.href}

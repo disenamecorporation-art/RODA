@@ -123,14 +123,18 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Location signature */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-light">
           <div>
-            &copy; {year} RODA Tecnologías. Todos los derechos reservados.
+            &copy; {year} RODA Tecnologías. Todos los derechos reservados.{" "}
+            <span className="mx-1">|</span> Hecho por{" "}
+            <a
+              href="https://instagram.com/legaint.ve"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-orange hover:text-white transition-colors font-medium underline underline-offset-4"
+            >
+              Legaint Corporation
+            </a>
           </div>
-          
-          <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-white font-medium">
-            <span>Hecho con orgullo en Venezuela</span>
-            <Heart className="w-3 h-3 text-red-500 fill-red-500 animate-pulse" />
-            <span>🇻🇪</span>
-          </div>
+
         </div>
 
       </div>
